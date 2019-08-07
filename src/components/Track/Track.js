@@ -1,10 +1,30 @@
+import React from 'react';
+import './Track'
 
-/* 
-**this is a template
-<div class="Track">
-  <div class="Track-information">
-    <h3><!-- track name will go here --></h3>
-    <p><!-- track artist will go here--> | <!-- track album will go here --></p>
-  </div>
-  <button class="Track-action"><!-- + or - will go here --></button>
-</div> */
+class Track extends React.Component{
+
+  renderAction(){
+    if(isRemoval){
+      return <button className='Track-action'> - </button>
+    }else{
+      return <button className='Track-action'> + </button>
+    }
+  }
+
+  render(){
+    return(
+      <div className='Track-information'>
+        <h3>{this.props.track.name}</h3>
+
+        <p> {this.props.track.artist} | {this.props.track.album}
+        </p>
+
+        <button className='Track-action'>
+        {/* + or a - will go here */}
+        </button>
+      </div>
+    )
+  }
+}
+
+export default Track;
